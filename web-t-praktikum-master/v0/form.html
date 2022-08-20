@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/grid.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/img/homepage-logo.png" width="150" height="150" alt="homepage Logo">
+        <h1>Tutorial-Formular</h1>
+    </header>
+    <nav>
+        <div id="a">
+            <a href="list.html">Homepage </a>
+            <a href="tutorials.html">Tutorials der Kategorie Web-Entwichlung</a>
+            <a href="tutorial.html"> Details zum Tutorial HTML5</a>
+            <a href="form.html">Neues Tutorial anlegen</a>
+        </div>
+    </nav>
+    <div class="container">
+        <main>
+            <form action="https://labs.inf.fh-dortmund.de/tutorialService/testCreateTutorial.php" method="post">
+                <fieldset>
+                    <legend>Tutorialinformationen</legend>
+                    <p>
+                        <label class="erforderlich">
+                            Titel:
+                            <input type="text" name="name" minlength="4" maxlength="20" pattern="[A-Z][\w\s]*"
+                                placeholder="Bespiel-Tutorial" required>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="erforderlich">
+                            Sprache:
+                            <select name="language" required>
+                                <option value="" hidden disabled selected>-</option>
+                                <option value="de">Deutsch</option>
+                                <option value="en">Englisch</option>
+                                <option value="es">Spanisch</option>
+                                <option value="fr">Französisch</option>
+                            </select>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="erforderlich">
+                            AutorIn(nen):
+                            <input type="text" name="author" pattern="([A-Z][a-z0-9]+)(,[\s]?[A-Z][a-z0-9]+)*"
+                                placeholder="Autor Name" required>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="erforderlich">
+                            Kategorie(n):
+                            <input type="text" name="categories" pattern="([A-Z][a-z]+)(,[\s]?[A-Z][a-z]+)*"
+                                placeholder="Beispiel-Kategorie" required>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Beschreibung:
+                            <textarea name="description" minlength="40" required
+                                placeholder="Beschreibung des Tutorials"></textarea>
+                        </label>
+                    </p>
+                    <fieldset>
+                        <legend>Zeitliche Rahmenbedingugen</legend>
+                        <p>
+                            <label class="erforderlich">
+                                Dauer:
+                                <input type="time" name="duration" required min="00:20" max="16:00">
+                            </label>
+                        </p>
+                        <p>
+                            <label class="erforderlich">
+                                Veröffentlichung (Datum)
+                                <input type="date" name="date" required>
+                            </label>
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Inhalt</legend>
+                        <input id="textTutorial" type="radio" name="type" value="text">Text-Tutorial
+                        <br>
+                        <input id="videoTutorial" type="radio" name="type" value="video">Video-Tutorial
+                        <p>
+                            <label class="erforderlich">
+                                Wert:
+                                <input id="wert" type="url" name="content" placeholder="http://beispiel.com" required>
+                            </label>
+                        </p>
+                    </fieldset>
+                </fieldset>
+                <p>
+                    <input id="formSubmit" type="submit" value="senden">
+                    <input id="formReset" type="reset" value="reset">
+                </p>
+            </form>
+        </main>
+
+        <aside>
+            <h3>Neue Tutorials</h3>
+            <ul>
+                <li>HTML5 Der schnelle Einstieg, 10.2021 - Dauer: 2 Stunden 40 Minuten</li>
+                <li>CSS3 Tutorial, 02.2013 - Dauer: 1 Stunden 55 Minuten</li>
+            </ul>
+        </aside>
+    </div>
+    <footer>
+        <hr>
+        &copy;2021 EasyLearn
+    </footer>
+    <script src="assets/javaScript/form.js"></script>
+    <script src="assets/javaScript/burgermenu.js"></script>
+</body>
+
+</html>

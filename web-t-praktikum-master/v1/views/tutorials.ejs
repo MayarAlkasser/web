@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/grid.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Tutorials</title>
+</head>
+
+<body>
+    <%- include("header.ejs") %>
+        <%- include("nav.ejs") %>
+            <div class="container">
+                <main>
+                    <article class="tutorials" title="Web-Technologien-Tutorials" id="web-entwicklung">
+                        <h2>Web Technologien Kategorie</h2>
+                        <% for (tutorial of tutorialsFeld) { %>
+                            <article title=<%=tutorial.name %> >
+                                <figure>
+                                    <img src=<%=tutorial.bild.url %> width="140" height="140" alt=<%=tutorial.name %>>
+                                        <figcaption>
+                                            <%= tutorial.name %> Tutorial
+                                        </figcaption>
+                                </figure>
+                                <h3 title=<%=tutorial.name %>><a href="/tutorial?name=<%= tutorial.name %>">
+                                        <%= tutorial.name %> Tutorial
+                                    </a></h3>
+                                <p>
+                                    Datum: <%= tutorial.datum %>
+                                </p>
+                                <p>
+                                    Dauer: <%= getDauerInStundenUndMinuten(tutorial.dauer) %>
+                                </p>
+                                <p>
+                                    Beschreibung: <%= tutorial.beschreibung %>
+                                </p>
+                            </article>
+                            <% } %>
+
+                    </article>
+                </main>
+                <%- include("aside.ejs") %>
+            </div>
+            <%- include("footer.ejs") %>
+                <script src="/javaScript/burgermenu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+h1 {
+  font-size: 3em;
+  font-family: monospace, sans-serif;
+  color: cornflowerblue;
+  background-color: lightgoldenrodyellow;
+  text-align: center;
+}
+
+h2 {
+  font-size: x-large;
+  color: darkblue;
+  background-color: lightgreen;
+  padding: 10px;
+  font-family: cursive;
+}
+
+h3 {
+  color: maroon;
+  font-size: x-large;
+  text-shadow: 1px 1px 1px gray;
+}
+input[required]:valid {
+  color: green;
+}
+input[required]:invalid {
+  color: red;
+}
+
+label select {
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.erforderlich::after {
+  content: "(Erforderliches Feld)";
+  color: grey;
+}
+
+input[required] {
+  border-left: 3px solid black;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  padding: 5px;
+}
+
+fieldset legend {
+  color: white;
+  padding: 10px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  border-radius: 5px;
+  background-color: rgb(199, 115, 115);
+}
+
+p input[type="submit"],
+p input[type="reset"] {
+  border: 0px;
+  font-size: large;
+}
+
+#formSubmit {
+  background-color: greenyellow;
+
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+}
+#formReset {
+  background-color: red;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+fieldset {
+  border-top: 2px solid;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+aside {
+  background-color: lightgrey;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+aside ul {
+  font-style: italic;
+  font-weight: bold;
+}
+
+nav {
+  background-color: rgb(228, 190, 190);
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 5px black;
+}
+nav a {
+  color: rgb(10, 79, 139);
+  font-size: large;
+}
+nav a:hover {
+  font-weight: bold;
+}
+footer {
+  font-weight: bold;
+}
+table {
+  margin: 20px 0px 20px;
+}
+table tbody tr:nth-of-type(odd) {
+  background-color: skyblue;
+}
+thead,
+tfoot {
+  background-color: slategray;
+  color: white;
+}
+* {
+  font-family: Helvetica, Arial;
+}
+
+.tutorials figure {
+  float: left;
+}
+.tutorials article {
+  margin-bottom: 80px;
+}
+.tutorial figure {
+  float: right;
+}
+
+header {
+  display: flex;
+}
+h1 {
+  flex-grow: 1;
+}
+
+nav {
+  display: flex;
+}
+nav a {
+  margin: 10px;
+}
+
+footer {
+  font-size: large;
+  position: sticky;
+  /*position:fixed*/
+  bottom: 0px;
+  width: 100%;
+  background-color: white;
+}
+
+main,
+aside {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+    width: 70%;
+  }
+
+  header img {
+    width: 20%;
+    height: 20%;
+  }
+}
+
+#a {
+  display: flex;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    display: none;
+  }
+
+  nav div {
+    flex-direction: column;
+  }
+}

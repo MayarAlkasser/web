@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/flexbox.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+</head>
+
+
+<body>
+    <%- include("header.ejs") %>
+        <%- include("nav.ejs") %>
+            <div id="tutorialHauptBereich">
+                <main id="tutorialMain">
+                    <article class="tutorial" title=<%=tutorial.name %>>
+                        <h2>Informationen zum Tutorial</h2>
+                        <figure>
+                            <img src=<%=tutorial.bild.url %> width="100" height="100" alt=<%= tutorial.bild.name %>>
+                                <figcaption>
+                                    <%= tutorial.name %> Tutorial
+                                </figcaption>
+                        </figure>
+                        <p>Erscheinungsjahr: <%= tutorial.datum %>
+                        </p>
+                        <p>Dauer: <%= getDauerInStundenUndMinuten(tutorial.dauer) %>
+                        </p>
+                        <p>Beschreibung: <%= tutorial.beschreibung %>.</p>
+                    </article>
+                    <% if(tutorial.embedCode) { %>
+                        <article class="tutorial">
+                            <h2>Video-Tutorial</h2>
+                            <iframe width="420" height="315"
+                                src="https://www.youtube.com/embed/<%=tutorial.embedCode%>">
+                            </iframe>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name des Kapitals</th>
+                                        <th>Kurzbeschreibung des Kapitelinhalts</th>
+                                        <th>Dauer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for (kapitel of tutorial.kapitelliste) { %>
+                                        <tr>
+                                            <td>
+                                                <%=kapitel.name %>
+                                            </td>
+                                            <td>
+                                                <%=kapitel.beschreibung %>
+                                            </td>
+                                            <td>
+                                                <%=getDauerInStundenUndMinuten(kapitel.dauer) %>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Gesamtdauer des Tutorials</th>
+                                        <th colspan="2">
+                                            <%= getDauerInStundenUndMinuten(tutorial.dauer)%>
+                                        </th>
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+
+                        </article>
+                        <% } else { %>
+                            <article class="tutorial">
+                                <h2>Text-Tutorial</h2>
+                                <a href=<%=tutorial.url %>> Link zum Tutorial </a>
+                            </article>
+                            <%}%>
+                </main>
+                <%- include("aside.ejs") %>
+            </div>
+            <%- include("footer.ejs") %>
+                <script src="/javaScript/burgermenu.js"></script>
+
+</body>
+
+</html>

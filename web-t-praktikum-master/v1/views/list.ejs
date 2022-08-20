@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/flexbox.css">
+    <link rel="stylesheet" type="text/css" href="/css/tiles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <%- include("header.ejs") %>
+        <%- include("nav.ejs") %>
+            <div id="hauptBereich">
+                <main id="listMain">
+                    <form title="Titel" action="http://localhost:8844" method="get">
+                        <label>
+                            Titel: <input type="search" id="suchfeld" name="search" pattern="[A-Z][\w\s]*"
+                                placeholder="Nach Tutorials suchen " minlength="4" maxlength="20" required>
+                        </label>
+                        <input type="submit" value="Suchen!">
+                    </form>
+                    <article>
+                        <h2>Liste der Kategorie</h2>
+                        <div id="kategorieListe">
+                            <% for (kategorie of kategorieFeld) { %>
+                                <a href="/tutorials?category=<%= kategorie.name %>">
+                                    <img src=<%=kategorie.bild.url %> width="200" height="150"
+                                    alt=<%= kategorie.name %> >
+                                        <h4>
+                                            <%= kategorie.name %>
+                                        </h4>
+                                </a>
+                                <% } %>
+                        </div>
+                    </article>
+                </main>
+                <%- include("aside.ejs") %>
+            </div>
+            <%- include("footer.ejs") %>
+                <script src="/javaScript/burgermenu.js"></script>
+
+</body>
+
+</html>

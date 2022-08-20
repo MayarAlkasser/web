@@ -1,0 +1,24 @@
+#hauptBereich,
+#tutorialHauptBereich {
+  display: flex;
+  flex-direction: row;
+}
+
+#listMain,
+#tutorialMain {
+  flex-grow: 1;
+}
+
+aside {
+  width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  #hauptBereich,
+  #tutorialHauptBereich {
+    flex-direction: column;
+  }
+  aside {
+    width: 100%;
+  }
+}

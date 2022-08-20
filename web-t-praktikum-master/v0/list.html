@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/flexbox.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/tiles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/img/homepage-logo.png" width="150" height="150" alt="homepage Logo">
+        <h1>Herzlich Wilkommen bei Easy Learn</h1>
+    </header>
+    <nav>
+        <div id="a">
+            <a href="list.html">Homepage </a>
+            <a href="tutorials.html">Tutorials der Kategorie Web-Entwichlung</a>
+            <a href="tutorial.html"> Details zum Tutorial HTML5</a>
+            <a href="form.html">Neues Tutorial anlegen</a>
+        </div>
+    </nav>
+    <div id="hauptBereich">
+        <main id="listMain">
+            <form title="Titel" action="http://localhost:8844" method="get">
+                <label>
+                    Titel: <input type="search" id="suchfeld" name="search" pattern="[A-Z][\w\s]*"
+                        placeholder="Nach Tutorials suchen " minlength="4" maxlength="20" required>
+                </label>
+                <input type="submit" value="Suchen!">
+            </form>
+            <article>
+                <h2>Liste der Kategorie</h2>
+                <div id="kategorieListe">
+                    <a href="tutorials.html">
+                        <img src="assets/img/web-development-logo.jpg" width="200" height="150"
+                            alt="Web beste Technologien">
+                        <h4>Web-Technologien Tutorials</h4>
+                    </a>
+                    <a href="tutorials.html">
+                        <img src="assets/img/music-logo.jpg" width="200" height="150" alt="Musik ist ein Wunderkunst">
+                        <h4>Musik Tutorials</h4>
+                    </a>
+                    <a href="tutorials.html">
+                        <img src="assets/img/games-logo.png" width="200" height="150" alt="Spielen macht SPAß!">
+                        <h4> Game Tutorials</h4>
+                    </a>
+                    <a href="tutorials.html">
+                        <img src="assets/img/koch-Tutorial.png" width="200" height="150" alt="Spielen macht SPAß!">
+                        <h4>Koch Tutorials</h4>
+                    </a>
+                </div>
+            </article>
+        </main>
+        <aside class="innenBereich">
+            <h3>Neue Tutorials</h3>
+            <ul>
+                <li>HTML5 Der schnelle Einstieg, 10.2021 - Dauer: 2 Stunden 40 Minuten</li>
+                <li>CSS3 Tutorial, 02.2013 - Dauer: 1 Stunden 55 Minuten</li>
+            </ul>
+        </aside>
+    </div>
+    <footer>
+        <hr>
+        &copy;2021 EasyLearn
+    </footer>
+    <script src="assets/javaScript/list.js"> </script>
+    <script src="assets/javaScript/burgermenu.js"></script>
+
+</body>
+
+</html>

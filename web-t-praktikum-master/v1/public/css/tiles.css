@@ -1,0 +1,22 @@
+#kategorieListe {
+  display: flex;
+  flex-flow: row wrap;
+}
+#kategorieListe a {
+  border: 2px solid lightgreen;
+  box-shadow: 8px 8px 8px lightgreen;
+  padding: 12px;
+  margin: 15px;
+  width: 250px;
+  height: 250px;
+  flex-basis: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h4 {
+  margin: 2px;
+  font-size: large;
+}
